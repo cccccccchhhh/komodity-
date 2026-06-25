@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --forest-primary: #16a34a;
+  --forest-dark: #14532d;
+  --earth-accent: #ca8a04;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #0a0f0a;
+  color: #f0fdf4;
+}
+
+/* Hero gradient */
+.hero-gradient {
+  background: radial-gradient(ellipse 80% 60% at 50% -10%, #166534 0%, transparent 60%),
+              radial-gradient(ellipse 60% 40% at 80% 80%, #1a3a1a 0%, transparent 50%),
+              #0a0f0a;
+}
+
+/* Glass card */
+.glass-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+}
+
+.glass-card-green {
+  background: rgba(22,163,74,0.08);
+  border: 1px solid rgba(22,163,74,0.2);
+  backdrop-filter: blur(12px);
+}
+
+/* Animated glow */
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.4; }
+  50%       { opacity: 0.8; }
+}
+.glow-dot {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* Tab indicator */
+.tab-active {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  box-shadow: 0 0 20px rgba(22,163,74,0.4);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0a0f0a; }
+::-webkit-scrollbar-thumb { background: #166534; border-radius: 3px; }
+
+/* Badge */
+.badge-green  { background: rgba(22,163,74,0.15);  border: 1px solid rgba(22,163,74,0.3);  color: #86efac; }
+.badge-yellow { background: rgba(202,138,4,0.15);  border: 1px solid rgba(202,138,4,0.3);  color: #fde047; }
+.badge-red    { background: rgba(239,68,68,0.15);  border: 1px solid rgba(239,68,68,0.3);  color: #fca5a5; }
+.badge-blue   { background: rgba(59,130,246,0.15); border: 1px solid rgba(59,130,246,0.3); color: #93c5fd; }
+
+/* Input search */
+.search-input {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #f0fdf4;
+  transition: all 0.2s;
+}
+.search-input:focus {
+  outline: none;
+  border-color: #16a34a;
+  background: rgba(22,163,74,0.08);
+  box-shadow: 0 0 0 3px rgba(22,163,74,0.15);
+}
+.search-input::placeholder { color: rgba(240,253,244,0.3); }
+
+/* Stat card */
+.stat-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  transition: all 0.2s;
+}
+.stat-card:hover {
+  background: rgba(22,163,74,0.06);
+  border-color: rgba(22,163,74,0.2);
+  transform: translateY(-1px);
+}
+
+/* Progress bar */
+.progress-bar {
+  background: linear-gradient(90deg, #16a34a, #22c55e);
+  height: 4px;
+  border-radius: 2px;
+  transition: width 0.8s ease;
+}
+
+/* Typewriter cursor */
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+.cursor { animation: blink 1s step-end infinite; }
